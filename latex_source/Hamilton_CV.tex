@@ -1,0 +1,412 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.1 (9/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%---------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%---------------------------------------
+
+\documentclass[10pt,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{multicol}
+
+\usepackage[margin=2.475cm]{geometry} % Reduce document margins
+\setlength{\hintscolumnwidth}{2cm} % Uncomment to change the width of the dates column
+\setlength\columnsep{20pt}
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+
+% \newcommand{\printprintbibliographyinfo}[2]{\mbox{\textcolor{accent}{\normalfont #1}\hspace{0.5em}#2\hspace{2em}}}
+\usepackage[backend=biber,
+style=musuos,
+sorting=ydnt,
+firstinits=true,
+maxnames=5,
+defernumbers=true
+]{biblatex}
+
+
+% Define a filter for the last 5 years (e.g., 2021-2025)
+% Define a check for the last 5 years
+\defbibcheck{last5years}{%
+  \iffieldundef{year}
+    {\skipentry}
+    {\ifnumless{\thefield{year}}{2020}
+      {\skipentry}
+      {\ifnumgreater{\thefield{year}}{2025}
+        {\skipentry}
+        {}}}%
+}
+
+\addbibresource{portfolio.20251230.bib}
+\newcommand{\makeauthorbold}[1]{%
+  \DeclareNameFormat{author}{%
+    \ifthenelse{\value{listcount}=1}
+    {%
+      {\expandafter\ifstrequal\expandafter{\namepartfamily}{#1}{\mkbibbold{\namepartfamily\addcomma\addspace \namepartgiveni}}{\namepartfamily\addcomma\addspace \namepartgiveni}}
+      %
+    }{\ifnumless{\value{listcount}}{\value{liststop}}
+        {\expandafter\ifstrequal\expandafter{\namepartfamily}{#1}{\mkbibbold{\addcomma\addspace \namepartfamily\addcomma\addspace \namepartgiveni}}{\addcomma\addspace \namepartfamily\addcomma\addspace \namepartgiveni}}
+        {\expandafter\ifstrequal\expandafter{\namepartfamily}{#1}{\mkbibbold{\addcomma\addspace \namepartfamily\addcomma\addspace \namepartgiveni\addcomma\isdot}}{\addcomma\addspace \namepartfamily\addcomma\addspace \namepartgiveni\addcomma\isdot}}%
+      }
+    \ifthenelse{\value{listcount}<\value{liststop}}
+    {\addcomma\space}{}
+  }
+}
+\makeauthorbold{Hamilton}
+\definecolor{LightGrey}{HTML}{606060}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\newcommand{\cvtag}[1]{%
+  \tikz[baseline]\node[anchor=base,draw=LightGrey!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+}
+
+%---------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%---------------------------------------
+
+\firstname{Nicholas} % Your first name
+\familyname{Hamilton} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+\title{Research Leadership, Renewable Energy, Fluid Mechanics}
+\address{3330 SW Knollbrook Ave.}{Corvallis, OR 97333}
+\mobile{+1 720.551.1897}
+% \phone{+1 303.384.6945}
+%\fax{(000) 111 1113}
+\email{nicholas.hamilton@nrel.gov}
+%\homepage{staff.org.edu/~jsmith}{staff.org.edu/$\sim$jsmith} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+%\extrainfo{additional information}
+
+%\photo[60pt][0.4pt]{mugshot.jpg} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+
+%\quote{"A witty and playful quotation" - John Smith}
+
+%---------------------------------------
+
+\begin{document}
+
+\makecvtitle
+\vspace{-2.5em}  % Adjust this value to your preference
+
+
+%---------------------------------------
+%	EDUCATION SECTION
+%---------------------------------------
+
+\section{Education}
+
+\cventry{2013--2016}
+{\href{http://www.pdx.edu/mme/doctorate-phd-mechanical-engineering}{Doctor of Philosophy, Mechanical Engineering}}
+{\newline \textsc{Dissertation:} \emph{Wake character in the wind turbine array: (Dis-)organization, spatial and dynamic evolution, and low-dimensional modeling}}
+{\newline Methodological development of nested modal decomposition strategies describing spatial evolution of wake modes and leads to reduced order modeling of dynamical systems}
+{}%{\newline Advisors: Dr. Ra\'ul Bayo\'an Cal and Dr. Murat Tutkun}
+{ \href{http://www.pdx.edu}{Portland State University, Portland, Oregon}}
+%{ }
+
+\cventry{2012--2014}
+{\href{http://www.pdx.edu/mme/master-of-science-in-mechanical-engineering-msme}{Master of Science, Mechanical Engineering}}
+{\newline \textsc{Thesis:} \emph{Anisotropy of the Reynolds stress tensor in the wakes of wind turbines in Cartesian arrangements with counter-rotating rotors}}
+{\newline Experimental correlation between wind turbine array performance and momentum balance with the anisotropy of turbulence field}
+{}%\newline Advisors: Dr. Ra\'ul Bayo\'an Cal}
+{\href{http://www.pdx.edu}{Portland State University, Portland, Oregon}}
+
+\cventry{2010--2012}
+{\href{http://imp-turbulence.ec-lille.fr/index.php}{Master of Science, Computational and Experimental Turbulence}}
+{\newline \textsc{Thesis:} \emph{Characterization of wake dynamics for aligned and staggered wind turbine arrays via low-dimensional modeling}}
+{\newline Extensive power production analysis for model-scale wind turbine array, numerical decomposition of turbulence in wind turbine canopy, separation of modes for furture modeling}
+{}%{\newline Advisors: Dr. Ra\'ul Bayo\'an Cal and Dr. Murat Tutkun}
+{\href{http://ensip.univ-poitiers.fr/}{\'Ecole Nationale Sup\'erieur d'Ingenieurs de Poitiers, Poitiers, France} \newline \href{http://www.ensma.fr/}{\'Ecole Nationale Sup\'erieur de Mathematique et A\'erotechnique, Poitiers, France} \newline \href{http://www.ec-lille.fr/}{\'Ecole Centrale de Lille, Lille, France}}
+
+
+\cventry{2004--2010}
+{\href{http://www.pdx.edu/mme/undergraduate-mme}{Bachelor of Science, Mechanical Engineering}}{}{}
+{\textit{\newline Summa Cum Laude}}
+{\href{http://www.pdx.edu}{Portland State University, Portland, Oregon}}
+
+
+
+\section{Professional Experience}
+
+\cventry{2017--\textit{present}}{Senior Research Engineer \& Principal Investigator}{\textsc{National Laboratory of the Rockies (formerly known as NREL)}}{\newline Golden, CO}{}{Direct \$65M+ research portfolio spanning wind energy, atmospheric science, and grid integration through multi-institutional collaborations.
+  \begin{itemize}
+    \item Led AWAKEN (\$28M+, 5-year campaign, 12+ institutions) simulation working group creating collaborative research teams and connecting them with DOE supercomputing resources; directed uncertainty quantification working group developing systematic protocols for quality control across heterogeneous sensor types and federated data access; produced 200+ TB of benchmark data now used internationally
+    \item Directed RAAW campaign (\$8M+, GE Vernova, Sandia) developing instrumentation strategies and validation frameworks for utility-scale turbines; developed generative AI methods for reconstructing turbulent inflows from sparse measurements
+    \item Develop proposals advancing wind energy science and technology, securing, advancing remote sensing and measurement for renewable energy, suporting infrastructure modernization at NREL Flatirons Campus, and developing innovative modeling and machine learning methods for fluid-structure systems
+    \item Maintain strategic relationships with federal program managers across DOE (Water Power, Wind Energy, Grid Modernization), NSF (Engineering, Geosciences), NASA (JPL, EOS), and NOAA to shape funding priorities and position collaborative teams
+    \item Sustained collaborations with PNNL (grid integration, marine systems) and Sandia (survivability modeling, uncertainty quantification, simulation tools) through co-authored publications, co-developed proposals, and embedded student internships and postdoctoral positions
+    \item Support offshore wind survivability standards for BSEE and BOEM, demonstrating stakeholder engagement while maintaining research independence and scientific rigor
+    % \item Mentor 12 graduate students, 4 postdocs, 20+ undergraduates, and 11 junior staff scientists; mentees now hold faculty positions, lead national laboratory programs, and occupy senior industry roles
+  \end{itemize}
+}
+{}{}
+
+\cventry{2014--2017}{Research Associate}{\textsc{Wind energy and Turbulence Laboratory}}{\newline Portland State University}{}{Led a team of researchers working in an academic fluid mechanics research laboratory to investigate emerging science and engineering problems relating to aerodynamics and wind turbine arrays.
+  \begin{itemize}
+    \item Investigate high-Reynolds number fluid flows, including design of experiments, optical measurement systems, calibration and automation
+    \item Computational fluid dynamics studies to complement experimentation including analytical models, RANS and LES modeling
+    \item Mentored students and researchers including training on lab procedure, experimentation, analysis and technical writing
+  \end{itemize}
+}
+{}{}
+
+\cventry{2009--2014}{Research/Teaching Assistant}{\textsc{Mechanical Engineering Department}}{\newline Portland State University}{}{Supported teaching and research activities in the student thermal/fluids laboratory. Appointment concurrent with advanced studies.
+  \begin{itemize}
+    \item Graduate instructor in the mechanical engineering curriculum with regular interaction with a large and diverse student body
+    \item Managed the student fluid mechanics laboratory, designed laboratory exercises, student performance reporting and feedback
+  \end{itemize}
+}
+{}{}
+
+
+%---------------------------------------
+% CORE COMPETENCIES SECTION
+%---------------------------------------
+\section{Core Competencies}
+
+\subsection{Research Leadership}
+Multi-institutional program coordination, federal funding strategy (\$65M+ collaborative portfolio), stakeholder management across government, industry, and academic sectors, interdisciplinary team building spanning atmospheric science, fluid mechanics, and energy systems
+
+\subsection{Federal Programs \& Strategic Partnerships}
+Strategic relationships with federal agencies (DOE, NSF, NASA, NOAA, BSEE, BOEM), national laboratory partnerships (NREL, PNNL, Sandia), industry partnerships (turbine OEMs, wind developers), navigate organizational transitions and evolving agency priorities
+
+\subsection{Experimental Methods}
+Utility-scale turbine certification and testing (GWO certified: work at heights, fire safety, CPR/first aid), wind tunnel experimentation, remote sensing (LiDAR, thermodynamic profiling, acoustic tomography, PIV/DIC), data acquisition systems, mechanical integration and field deployment
+
+\subsection{Modeling \& Simulation}
+Multiphysics modeling of coupled fluid-structure systems, CFD for complex flows (Ansys, Star-CCM+, FLUENT, OpenFOAM), turbulence closure models (RANS, LES, hybrid methods), reduced-order modeling and modal decomposition, data assimilation and inverse modeling, uncertainty quantification and sensitivity analysis, HPC workflows and large-scale simulations (OpenFAST, SOWFA, TurbSim), validation against experimental observations
+
+\subsection{Software Engineering \& Data Science}
+Data engineering for scientific workflows (ETL pipelines, distributed systems, petabyte-scale data management), machine learning for physical systems (surrogate modeling, physics-informed neural networks, uncertainty quantification), GPU-accelerated computing, high-performance computing (HPC) resource optimization, real-time data assimilation and monitoring systems
+
+\subsection{Teaching \& Workforce Development}
+Prepared to teach fluid mechanics, turbulence, energy systems, numerical methods, and experimental techniques; project-based learning using field campaign data; support workforce development from coastal community technician training through graduate education
+
+% Add this section after Professional Experience and before Education
+
+\section{Grants and Funding}
+
+\textbf{Total Research Funding:} \$65M+ as PI, Co-PI, and Area Lead across national laboratory, DOE Office of Science, and DOE WETO programs. In addition to the selected programs below, I have contributed to numerous successful proposals as senior personnel and key contributor.
+\vspace{0.5em}
+
+\cventry{2024--\textit{present}}{ENDURA: Ensuring Data Usage from RAAW and AWAKEN}{DOE WETO Lab Call}{\$7.8M}{\newline Principal Investigator}{
+  Leading multi-laboratory initiative to maximize scientific impact of unprecedented wind energy field campaign datasets. Coordinating data quality control, benchmarking frameworks, and community engagement across 12+ institutions.
+}
+\cventry{2024--\textit{present}}{M5 Meteorological Tower Improvement Project}{NREL Facilities \& Operations}{~\$450K}{\newline Co-Investigator}{
+  Major infrastructure and processing software upgrades at Flatirons Campus to modernize measurement capabilities and ensure research leadership for wind energy R\&D for the next decade.
+}
+
+\cventry{2023--2026}{FLOWMAS: Floating Offshore Wind Modeling and Simulation}{DOE Office of Science Earthshot}{\$19M}{\newline Co-Investigator}{
+  Collaborative project with the DOE national lab system and HBCUs developing exascale algorithms spanning multiple scales and physics to predict floating offshore wind turbine response in ocean environments, addressing DOE's goal to reduce levelized cost of energy by 70\% by 2035.
+}
+
+\cventry{2022--2024}{Foundational AI for Wind Energy: Strategic Vision and Planning}{DOE WETO Lab Call}{~\$760K}{\newline Principal Investigator}{
+  Establishing roadmap for artificial intelligence integration in wind energy research and development.
+}
+
+\cventry{2021--2024}{High-Resolution Remote Sensing of Turbulent Velocity and Temperature}{NREL LDRD}{~\$350K/year}{\newline Principal Investigator}{
+  Development of acoustic tomography system for three-dimensional turbulent temperature and velocity field reconstruction advancing remote sensing temporal and spatial resolution.
+}
+
+\cventry{2021}{ARM Mobile Facility Deployment for AWAKEN}{DOE ARM Program}{~\$500K}{\newline Co-Investigator}{
+  Collaborated with PNNL and DOE Atmospheric Radiation Measurement program. Integrated advanced atmospheric measurement systems into large-scale wind farm study.
+}
+
+\cventry{2020-2025}{\href{https://wdh.energy.gov/project/awaken}{American WAKE experimeNt (AWAKEN)}}{DOE WETO Lab Call}{~\$28M+ total}{\newline Co-Investigator}{
+  Multi-institutional campaign producing 200+ TB of benchmark observational data on wind turbine wake interactions and aerodynamics to validate wind plant models, test wind farm control strategies for increased power production, and enable the international research community to advance wind energy science.
+}
+
+\cventry{2020-2024}{\href{https://wdh.energy.gov/project/raaw}{Rotor Aerodynamics, Aeroelastics and Wake (RAAW) Experiment}}{DOE WETO Lab Call}{~\$8M+ total}{\newline Principal Investigator}{
+  Intensive validation campaign in partnership with GE Vernova and Sandia Natinoal Laboratories producing validation-quality experimental data on inflow, turbine response, and wake dynamics across a utility-scale 2.8 MW turbine, with a public benchmark dataset released to advance wind turbine modeling validation from actuator disk to blade-resolved fidelity levels.
+}
+
+\section{Publications}
+
+\subsection{Overview}
+
+Authored 90+ peer-reviewed publications spanning wind energy, atmospheric science, turbulence, and fluid mechanics, including 50+ journal articles, conference proceedings, technical reports, and book chapters. Significant contributions to field campaign benchmark datasets (AWAKEN, RAAW, SWiFT) now used internationally for model validation and uncertainty quantification.
+
+\subsection{Impact Metrics}
+
+As of January 2026:
+
+\cvtag{Citations: \textbf{1,200+}}
+\cvtag{$h-$index: \textbf{21}}
+\cvtag{$i10-$index: \textbf{32}}\\
+\vspace{0.25em}
+See full publication list at end of CV or online on my 
+\href{https://scholar.google.com/citations?hl=en&user=eUWuvIIAAAAJ&scilu=&scisig=AMD79ooAAAAAXktLeCxQDA61eaRfJYFdHUVEYxFalntG&gmla=AJsN-F4JZ2IB4vgn8Efa0-p4KLu0EnTq283_XT4JraQxviWYJ9haO_0SCTCCpFApItnYM4ayAm12jvG8pm-JydPhyMk49EYOfdF_IV5woi3tTvazIE0eVDs&sciund=6293311927850668286}{\textbf{Google Scholar Profile}}
+
+\subsection{Notable Contributions}
+
+\cvitem{Field Campaigns}{Lead author on validation frameworks for AWAKEN and RAAW campaigns; co-authored 15+ publications using AWAKEN benchmark datasets across atmospheric boundary layer physics, wake modeling, and turbine response}
+
+\cvitem{Remote Sensing}{Pioneering work in acoustic tomography for atmospheric measurements in wind energy; advanced LiDAR uncertainty quantification methods  adopted internationally through IEA Wind Task 32}
+
+\cvitem{Turbulence Physics}{Fundamental contributions to understanding wake meandering, modal decomposition of turbulent flows, and reduced-order modeling of wind turbine arrays}
+
+\cvitem{Validation Methodology}{Established protocols for uncertainty quantification in heterogeneous sensor networks; developed quality control frameworks enabling federated data access for multi-institutional campaigns}
+
+
+\section{Teaching}
+
+\subsection{Teaching Experience}
+
+\cvitem{2012--2016}{Graduate Teaching Assistant, Mechanical Engineering Department, Portland State University — instructed undergraduate fluid mechanics laboratory, designed experiments, managed assessment and feedback for diverse student populations}
+
+\cvitem{2023--\textit{present}}{Guest Lecturer, "Wind Energy Systems," University of Colorado Boulder — delivered lectures on wind turbine aerodynamics, wake physics, and field measurement techniques to graduate students}
+
+\cvitem{2022--\textit{present}}{Mentor, NREL Graduate Student Programs — supervised capstone projects using field campaign data for hands-on learning in data science, fluid mechanics, and renewable energy systems}
+
+
+%---------------------------------------
+%	Mentoring SECTION
+%---------------------------------------
+\subsection{Student Mentoring}
+
+Mentored 12 graduate students (M.S. and Ph.D.), 4 postdoctoral researchers, 20+ undergraduate researchers, and 11 junior staff researchers, leading to more than 20 peer-reviewed publications with mentees as lead authors. Mentees now hold faculty positions at research universities, lead research programs at national laboratories and occupy senior technical roles in wind energy industry. Served on 6 thesis and dissertation committees.  Mentored first-generation college students and scholars from underrepresented groups through NREL diversity programs (SULI, RPP, GEM). Advocate for experiential learning opportunities connecting academic preparation with industry needs.
+
+% \subsection{Selected Recent Mentees}
+% \cvitem{Zein Sedak}{Mass-consistent analytical wake model development}
+% \cvitem{Aliza Abraham}{Wind turbine wake flow visualization and quantification via natural snowfall and high-fidelity model validation}
+% \cvitem{Lucas McCullum}{Development of an interactive web portal to visualize instrument data from meteorological towers}
+% \cvitem{Adam Wise}{Steady and Dynamic Behavior of Three Offshore Wind Turbines Under Different Waking Conditions}
+% \cvitem{James Hansen}{Acoustic Tomography Array Development and Calibration}
+% \cvitem{Ryan Scott}{Instrumented tunnel-scale wind turbine model for control and optimal power production}
+% \cvitem{Moira Gion}{Wind turbine array canopy flow experiments highlighting wake evolution via stereo-PIV}
+% \cvitem{Bianca Viggiano}{Long-term wind assessment for vertical-axis devices in the urban built envirnoment}
+% \cvitem{Jorge Ramos \& Sasha Friedman}{Biglow Canyon wind farm production reporting, analysis, and visualization}
+
+
+\subsection{Teaching Philosophy}
+
+Committed to project-based learning connecting theoretical foundations to real-world applications. Leverage field campaign datasets (AWAKEN, RAAW) to create authentic research experiences for students at all levels. Emphasize inclusive pedagogy supporting diverse learners through multiple modes of engagement: hands-on experimentation, computational modeling, and data-driven discovery. Prepared to teach fluid mechanics, turbulence, energy systems, numerical methods, and experimental techniques at both undergraduate and graduate levels.
+
+% \subsection{Workforce Development}
+
+% Support workforce development pathways spanning coastal community technician training through doctoral education. Collaborated with Oregon State University Extension programs to design training modules for marine energy field technicians.
+
+
+\section{Leadership, Honors, and Professional Service}
+
+\subsection{Leadership and Strategic Roles}
+
+\cvitem{2024--\textit{present}}{Scientific Committee Lead, North American Wind Energy Academy (NAWEA) 2026 Conference — organizing premier international conference bringing together academic, industry, and government stakeholders}
+
+\cvitem{2024--\textit{present}}{Scientific Subject Matter Expert, NASA Multi-Sensor Worldwide Ocean Winds (MWOW) Data Product Development advising on remote sensing validation strategies for marine applications}
+
+\cvitem{2023--\textit{present}}{Research and Innovation Board Member, TWAIN (The Wind energy science, technology, And Innovation Network) Project informing scientific objectives, research priorities and technology transfer strategies}
+
+\cvitem{2021--\textit{present}}{Community Engagement Lead, AWAKEN and RAAW Field Campaigns — organized stakeholder meetings at international conferences and events with DOE program managers, industry partners, and academic collaborators across more than a dozen institutions}
+
+\cvitem{2022--\textit{present}}{Contributor, IEA Wind Technology Collaboration Programme — contributing to international Tasks on Aerodynamics, Remote Sensing, Wake Model Benchmarking, and Instrumentation Development across 10+ countries}
+
+\cvitem{2019--\textit{present}}{Associate Editor, \textit{Journal of Renewable and Sustainable Energy} — curate special topic issues, coordinate peer review for journal advancing wind and renewable energy science; guest editor for four special collections on field campaigns, wind plant controls, hybrid energy systems, and wake modeling}
+
+\cvitem{2017--\textit{present}}{Invited Seminars at Oregon State University, Portland State University, University of Texas at Dallas, University of Colorado, University of Wyoming covering subjects in wind energy, applied mathematics, and field experiments}
+
+\cvitem{2016--\textit{present}}{Regular Session Chair, in wind energy, fluid-structure interaction, and reduced-order modeling, American Physical Society Division of Fluid Dynamics Annual Meeting}
+
+\subsection{Recognition}
+
+\cvitem{2022}{NREL President's Award for Outstanding Achievement in Field Campaign Planning and Execution (AWAKEN \& RAAW Projects) — recognizing multi-institutional coordination and stakeholder engagement}
+
+\cvitem{2018, 2020, 2023}{NREL Outstanding Mentor Award — honoring top mentors nominated by postdoctoral researchers, Research Participant Program (RPP) interns, and Science Undergraduate Laboratory Interns (SULIs)}
+
+\cvitem{2020}{National Renewable Energy Laboratory Employee of the Month}
+
+\cvitem{2015--2016}{Maseeh Fellowship — awarded to outstanding graduate students in engineering and computer science, Portland State University}
+
+\cvitem{2013--2015}{NSF IGERT Doctoral Fellowship, Ecosystem Services for Urbanizing Regions (ESUR) — interdisciplinary training program emphasizing stakeholder engagement and policy translation}
+
+\subsection{Professional Associations}
+
+\cvitem{2009--\textit{present}}{American Physical Society — Division of Fluid Dynamics (DFD)}
+
+\cvitem{2010--\textit{present}}{American Society of Mechanical Engineers — Oregon Chapter}
+
+\cvitem{2010--\textit{present}}{Tau Beta Pi Engineering Honor Society — Oregon Beta Chapter}
+
+
+\section{Software and Intellectual Property}
+
+\cvitem{2024}{NREL Software Record: \textbf{Acoustic Tomography Processing Suite} - Signal processing and inverse methods for three-dimensional atmospheric wind field reconstruction}
+
+\cvitem{2024}{NREL Software Record: \textbf{Field Measurement Design and Quality Control Toolbox} - Instrument placement optimization, data validation, and campaign planning tools}
+
+
+% \newpage
+
+%---------------------------------------
+%	PUBLICATIONS SECTION
+%---------------------------------------
+
+\section{Published work}
+\nocite{*}
+\printbibliography[heading=subbibliography,title={Journal Articles},type=article]
+\printbibliography[heading=subbibliography,title={Book Chapters},type=incollection]
+\printbibliography[heading=subbibliography,title={Technical Reports},type=report]
+\printbibliography[check=last5years,heading=subbibliography,title={Confernece Proceedings (last 5 years)},type=inproceedings]
+
+%%%%%%%%%%%%%%%%%%
+
+%Proficient in most Linux, Windows, and Mac OS X systems, , Purchasing and Building PCs; Software: MS Visual Studio, , MatLab, , MS Office Suites
+
+%---------------------------------------
+%	LANGUAGES SECTION
+%---------------------------------------
+
+%\section{Languages}
+%
+%\cvitemwithcomment{English}{Native language}{Fluent}
+%\cvitemwithcomment{Spanish, French}{Intermediate}{Conversational}
+%\cvitemwithcomment{Spanish}{Intermediate}{Conversational}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,56 +1,55 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "About"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. Incidentally, these same features make it a great template for anyone that needs to show off a professional template!
+I'm a Senior Research Engineer at the National Laboratory of the Rockies (NLR, formerly NREL), where I lead research at the intersection of wind energy, turbulence fluid physics, and applied mathematics. My work focuses on understanding wind turbine wake dynamics, developing advanced sensing technologies, and creating computational models that bridge fundamental fluid mechanics and practical engineering applications. I have codirected a $65M+ research portfolio spanning large-scale field campaigns, instrumentation development, and reduced order modeling.
 
- You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and Markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+## Research Focus
 
-A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured Markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various Markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+My research centers on fundamental questions about how wind turbines interact with the atmosphere and each other. Working with multi-institutional teams across national labs, universities, and industry, I've designed field experiments, developed measurement technologies, and built models that advance wind energy science and deployment.
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your Markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the Markdown files! You can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+**Wind Turbine Wake Physics**: As Principal Investigator for the Rotor Aerodynamics, Aeroelastics, and Wake (RAAW) experiment ($8M+) and Co-Investigator for the American WAKE experimeNt (AWAKEN, $28M+), I've led field campaigns investigating how wind turbine wakes evolve, interact, and dissipate considering the atmospheric boundary layer as a dynamic forcing environment. These experiments have produced 200+ TB of validation-quality data now used internationally for model development and uncertainty quantification. 
 
-For those users that need more advanced functionality, the template also supports the following popular tools:
-- [MathJax](https://www.mathjax.org/) for mathematical equations
-- [Mermaid](https://mermaid.js.org/) for diagraming
-- [Plotly](https://plotly.com/javascript/) for plotting
+The goal is straightforward: _better predictions of wind plant performance and turbine loads._
 
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](https://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+**Remote Sensing & Instrumentation**: I've developed acoustic tomography systems that reconstruct three-dimensional turbulent atmospheric wind and temperature fields from sound propagation measurements. This approach provides volumetric flow characterization with higher spatial and temporal resolution than conventional point measurements or line-of-sight remote sensing, revealing turbulent structures that are difficult to capture with traditional instruments.
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+**Reduced-Order Modeling & Physics-Informed Machine Learning**: Much of my work focuses on developing computationally efficient models of coupled dynamical systems. Using modal decompositions and physics-informed machine learning, we create models that capture essential structural, controller, and wake dynamics while remaining tractable for design optimization and real-time control applications. The goal is to retain the physics that matters while achieving computational speedups of 100-1000x over traditional CFD.
 
-Create content & metadata
-------
-For site content, there is one Markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a Markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each Markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+**Data Assimilation & Digital Twins**: In the Floating Offshore Wind Modeling and Simulation (FLOWMAS) Energy Earthshot Research Center ($19M DOE Office of Science, 2020-2025), I led the data assimilation and digital twin development. This work focused on integrating observational data with multiscale simulations spanning global climate models (E3SM), mesoscale atmospheric models (ERF), and microscale wind turbine simulations (ExaWind). I developed variational data assimilation methods (4D-Var), ensemble Kalman filtering approaches, and physics-informed machine learning techniques for state estimation in coupled metocean-turbine systems. The digital twin framework incorporated measurement system design, adaptive control architectures, and uncertainty quantification across the full simulation stack. The project was shuttered in 2025 due to federal reorganization of DOE EERE.
 
-**Markdown generator**
+## Background
 
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual Markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the Markdown files, then commit and push them to the GitHub repository.
+I earned my Ph.D. in Mechanical Engineering from Portland State University, where I developed methodological advances in nested modal decomposition strategies for describing the spatial evolution of wake modes and reduced-order modeling of dynamical systems. My dissertation focused on wake character in wind turbine arrays, examining the organization, spatial evolution, and dynamic behavior of turbulent flows in renewable energy systems.
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and Markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+I currently live in Corvallis, Oregon with my family, where we moved in 2024 to build community and be closer to family. As Oregon natives, we're invested in contributing to the state's research enterprise and coastal communities while advancing renewable energy science.
 
-Example: editing a Markdown file for a talk
-![Editing a Markdown file for a talk](/images/editing-talk.png)
+## Research Impact
 
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+My research has produced benchmark datasets and validation frameworks now used internationally by academic, national laboratory, and industry research teams. I've published 90+ peer-reviewed articles (1,200+ citations, h-index: 21) and serve as Associate Editor for the *Journal of Renewable and Sustainable Energy*. Through the IEA Wind Technology Collaboration Programme with researchers across 10+ countries, I've contributed to advancements in aerodynamics, remote sensing, wake modeling, and instrumentation development.
+
+The AWAKEN and RAAW field campaigns have become reference datasets for computational model validation, providing the high-quality measurements needed to improve wake models, turbine design tools, and wind plant optimization strategies.
+
+## Strategic Coordination
+
+Effective research requires coordination that amplifies individual investigator impact while elevating institutional mission spaces. Through managing concurrent projects spanning fundamental science, applied engineering, and infrastructure modernization, I've developed expertise in distributed leadership models where working groups maintain decision authority, pre-deployment workshops establish priorities before conflicts emerge, and regular synthesis enables cross-institutional review. This approach has proven successful in coordinating heterogeneous sensor networks, diverse stakeholder expectations, and competing facility demands across multi-institutional collaborations. Alongside infrastructure modernization at world-class R&D facilities and remote sensing innovation. This work requires balancing competing priorities while maintaining federal relationships across DOE offices, NSF, NASA, and NOAA.
+
+## Mentoring and Leadership
+
+I am committed to developing the next generation of renewable energy researchers through sustained mentoring relationships. I have supervised 12 graduate students, 4 postdoctoral researchers, 20+ undergraduate researchers, and 11 junior staff, leading to more than 20 peer-reviewed publications with mentees as lead authors. My three NREL Outstanding Mentor Awards (2018, 2020, 2023) reflect sustained success supporting diverse students from undergraduate interns to postdoctoral researchers. Several mentees now hold faculty positions, lead research programs at national laboratories, and occupy senior technical roles in the wind energy industry.
+
+
+## Recognition
+
+- **NREL President's Award** (2022) for outstanding achievement in field campaign planning and execution (AWAKEN & RAAW)
+- **NREL Outstanding Mentor Award** (2018, 2020, 2023)
+- **Scientific Committee Lead**, North American Wind Energy Academy (NAWEA) 2026 Conference
+- **Research Board Member**, TWAIN Project (The Wind energy science, technology, And Innovation Network)
+- **NASA Scientific SME**, Multi-Sensor Worldwide Ocean Winds (MWOW) Data Product Development
+
+For inquiries about research collaborations, field campaign data access, or student opportunities, please contact me at nicholas.hamilton@nlr.gov. 
